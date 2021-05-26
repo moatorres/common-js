@@ -1,0 +1,32 @@
+{
+  "name": "@mokacloud/common-js",
+  "version": "1.0.0",
+  "description": "mokacloud common js library",
+  "main": "dist/index.js",
+  "module": "esm/index.js",
+  "author": "Moa Torres",
+  "scripts": {
+    "clean": "rm -rf ./build/*",
+    "build:esm": "babel --config-file ./scripts/babel.config.js --extensions \".js,.ts\" ./src --out-dir ./esm --ignore \"**/__tests__/**/*,**/*.d.ts\"",
+    "pub": "yarn version && yarn release",
+    "release": "yarn build && cp README.md package.json build/ && cd build && yarn publish --access restricted --non-interactive",
+    "fixit": "npm i --package-lock-only && npm audit fix && rm yarn.lock && yarn import && rm -rf package-lock.json"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mokacloud/common-js.git"
+  },
+  "files": [
+    "build/**/*"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.14.3",
+    "@babel/core": "^7.14.3",
+    "@babel/node": "^7.14.2",
+    "@babel/preset-env": "^7.14.2"
+  },
+  "peerDependencies": {}
+}

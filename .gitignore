@@ -1,0 +1,38 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# npm
+npm-debug.log*
+.npmrc
+
+# yarn
+yarn-debug.log*
+yarn-error.log*
+yarn.lock
+.yarnrc
+
+# testing
+/coverage
+
+# production
+/build
+/dist
+/dix
+/esm
+/scripts
+.babelrc
+rollup.config.js
+tsconfig.json
+
+# misc
+.DS_Store
+*notas.md
+
+# .env
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
