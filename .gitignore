@@ -17,11 +17,11 @@ yarn.lock
 /coverage
 
 # production
-/build
-/dist
-/dix
-/esm
-/scripts
+build/
+dist/
+dix/
+esm/
+scripts/
 .babelrc
 rollup.config.js
 tsconfig.json
@@ -29,7 +29,7 @@ tsconfig.json
 # misc
 .DS_Store
 *notas.md
-/temp
+temp/
 
 # .env
 .env
