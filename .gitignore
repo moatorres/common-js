@@ -29,6 +29,7 @@ tsconfig.json
 # misc
 .DS_Store
 *notas.md
+/temp
 
 # .env
 .env
