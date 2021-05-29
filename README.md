@@ -1,6 +1,6 @@
 [mokacloud/common-js](https://github.com/mokacloud/common-js)
 
-### JavaScript Library
+## JavaScript Library
 
 This library is a collection of utilities built during the development of different projects. They should help you to develop Node.js apps faster and reliably.
 
