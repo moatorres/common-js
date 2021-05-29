@@ -1,7 +1,21 @@
+# logs
+logs
+lerna-debug.log*
+
+# keys
+*.key
+*.crt
+
 # dependencies
-/node_modules
+*node_modules/
 /.pnp
 .pnp.js
+
+# runtime
+pids
+*.pid
+*.seed
+*.pid.lock
 
 # npm
 npm-debug.log*

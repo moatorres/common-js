@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "checkJs": true,
+    "strictNullChecks": true,
+    "paths": {
+      "@core/*": ["./src/core/*"],
+      "@user/*": ["./src/core/user*"],
+      "@domain/*": ["./src/domain/*"],
+      "@errors/*": ["./src/errors/*"],
+      "@http/*": ["./src/http/*"],
+      "@express/*": ["./src/http/express/*"],
+      "@utils/*": ["./src/utils/*"]
+    }
+  },
+  "include": ["./src/**/*"],
+  "exclude": [
+    "node_modules",
+    "coverage"
+  ],
+}
