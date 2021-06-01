@@ -1,5 +1,5 @@
 export interface Identifier {
-  equals: (id: string | Identifier) => boolean
+  equals: (id: Identifier) => boolean
   toString: () => string
   toValue: () => string
 }
@@ -9,3 +9,4 @@ interface UniqueID {
 }
 
 export function makeIdFactory({ nanoid }: any): UniqueID
+export function makeIdentifier(props: string): Identifier

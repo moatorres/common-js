@@ -2,7 +2,7 @@ import makeReadOnly from '../utils/make-read-only'
 import pipe from '../utils/pipe'
 import withConstructor from '../utils/with-constructor'
 
-export const Identifier = (value) => (o) => {
+const Identifier = (value) => (o) => {
   let _value = value
 
   function equals(id) {
@@ -10,8 +10,7 @@ export const Identifier = (value) => (o) => {
       return false
     }
 
-    // @ts-ignore
-    if (!Object.getPrototypeOf(id) === Identifier) {
+    if (this.constructor !== Identifier) {
       return false
     }
 
@@ -33,7 +32,7 @@ export const Identifier = (value) => (o) => {
   })
 }
 
-const makeIdentifier = (props) =>
+export const makeIdentifier = (props) =>
   pipe(Identifier(props), withConstructor(Identifier))(props)
 
 export function makeIdFactory({ nanoid }) {
