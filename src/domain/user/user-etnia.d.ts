@@ -12,11 +12,11 @@ interface IEtnia {
 
 interface IEtniaBuilder {
   setEtnia: (etnia?: Etnias) => IEtniaBuilder
-  build: () => IEtnia
+  build: () => IEtnia | Error
 }
 
 interface IEtniaFactory {
-  create: ({}: IEtnia) => IEtnia
+  create: ({}: IEtnia) => IEtnia | Error
 }
 
 export function makeEtniaFactory(): IEtniaFactory

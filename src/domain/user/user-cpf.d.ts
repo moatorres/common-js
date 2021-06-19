@@ -3,12 +3,12 @@ interface UserCPF {
 }
 
 interface CPFBuilderProps {
-  setCPF: (cpf: string) => CPFBuilder
-  build: () => UserCPF
+  setCPF: (cpf: string) => CPFBuilder | Error
+  build: () => UserCPF | Error
 }
 
 interface CPFFactoryProps {
-  create: ({ cpf: string }) => UserCPF
+  create: ({ cpf: string }) => UserCPF | Error
 }
 
 export function CPFBuilder(): CPFBuilderProps

@@ -8,8 +8,8 @@ interface UserCookies {
 type UserCookiesProps = 'analytics' | 'essenciais' | 'marketing'
 
 interface UserCookiesBuilderProps {
-  toggle: (props: UserCookiesProps) => UserCookiesBuilder
-  build: () => UserCookies
+  toggle: (props: UserCookiesProps) => UserCookiesBuilder | Error
+  build: () => UserCookies | Error
 }
 
 export function userCookiesBuilder(): UserCookiesBuilderProps

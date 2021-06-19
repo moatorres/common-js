@@ -13,15 +13,15 @@ interface IDadosBancariosDTO {
 }
 
 interface IDadosBancariosBuilder {
-  setBanco: (banco: string) => DadosBancariosBuilder
-  setAgencia: (agencia: string) => DadosBancariosBuilder
-  setTipo: (tipo: string) => DadosBancariosBuilder
-  setConta: (conta: string) => DadosBancariosBuilder
-  build: () => IDadosBancarios
+  setBanco: (banco: string) => DadosBancariosBuilder | Error
+  setAgencia: (agencia: string) => DadosBancariosBuilder | Error
+  setTipo: (tipo: string) => DadosBancariosBuilder | Error
+  setConta: (conta: string) => DadosBancariosBuilder | Error
+  build: () => IDadosBancarios | Error
 }
 
 interface IDadosBancariosFactory {
-  create: ({}: IDadosBancariosDTO) => IDadosBancarios
+  create: ({}: IDadosBancariosDTO) => IDadosBancarios | Error
 }
 
 export function makeDadosBancariosFactory(): IDadosBancariosFactory

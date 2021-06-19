@@ -3,12 +3,12 @@ interface IUserEmail {
 }
 
 interface IUserEmailBuilder {
-  setEmail: (email: string) => IUserEmailBuilder
-  build: () => IUserEmail
+  setEmail: (email: string) => IUserEmailBuilder | Error
+  build: () => IUserEmail | Error
 }
 
 interface IUserEmailFactory {
-  create: ({}: IUserEmail) => IUserEmail
+  create: ({}: IUserEmail) => IUserEmail | Error
 }
 
 export function makeUserEmailFactory(): IUserEmailFactory
