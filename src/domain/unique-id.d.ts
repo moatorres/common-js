@@ -9,4 +9,4 @@ interface UniqueID {
 }
 
 export function makeIdFactory({ nanoid }: any): UniqueID
-export function makeIdentifier(props: string): Identifier
+export function makeIdentifier(id: string): Identifier

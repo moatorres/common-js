@@ -1,28 +1,14 @@
 import makeReadOnly from '../utils/make-read-only'
-import pipe from '../utils/pipe'
-import withConstructor from '../utils/with-constructor'
 
-const Identifier = (value) => (o) => {
+const Identifier = (value) => {
   let _value = value
 
+  const toString = () => String(_value)
+  const toValue = () => _value
+
   function equals(id) {
-    if (id === null || id === undefined) {
-      return false
-    }
-
-    if (this.constructor !== Identifier) {
-      return false
-    }
-
+    if (id === null || id === undefined) return false
     return id.toValue() === _value
-  }
-
-  function toString() {
-    return String(_value)
-  }
-
-  function toValue() {
-    return _value
   }
 
   return makeReadOnly({
@@ -32,8 +18,7 @@ const Identifier = (value) => (o) => {
   })
 }
 
-export const makeIdentifier = (props) =>
-  pipe(Identifier(props), withConstructor(Identifier))(props)
+export const makeIdentifier = (id) => Identifier(id)
 
 export function makeIdFactory({ nanoid }) {
   function gerarId(id) {
