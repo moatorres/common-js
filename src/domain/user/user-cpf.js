@@ -1,39 +1,39 @@
 import { regex, makeReadOnly } from '../../utils'
 
-const cpfValido = (cpf) => typeof cpf === 'string' && regex.cpf.test(cpf)
+const userCPF = ({ cpf }) => ({ cpf })
 
-const UserCPF = function ({ cpf }) {
-  this.cpf = cpf
-}
+const cpfValido = (cpf) => cpf && typeof cpf === 'string' && regex.cpf.test(cpf)
 
-export const CPFBuilder = function () {
+export const CPFBuilder = () => {
+  function setCPF(cpf) {
+    const valido = cpfValido(cpf)
+    if (!valido) throw new Error('CPF inválido (CPFBuilder)')
+
+    this.cpf = cpf
+    return this
+  }
+
+  function build() {
+    if (!this.cpf) {
+      throw new Error('Você deve inserir um CPF válido (CPFBuilder)')
+    }
+
+    return makeReadOnly(userCPF({ cpf: this.cpf }))
+  }
+
   return {
-    setCPF: function (cpf) {
-      const valido = cpfValido(cpf)
-      if (!valido) throw new Error('CPF inválido (CPFBuilder)')
-
-      this.cpf = cpf
-      return this
-    },
-    build: function () {
-      if (!this.cpf) {
-        throw new Error('Você deve inserir um CPF válido (CPFBuilder)')
-      }
-
-      return makeReadOnly(new UserCPF({ cpf: this.cpf }))
-    },
+    setCPF,
+    build,
   }
 }
 
-export const makeCPFFactory = function () {
+export const makeCPF = () => {
+  function create({ cpf }) {
+    if (!cpfValido(cpf)) throw new Error('CPF inválido (makeCPF)')
+    return makeReadOnly(userCPF({ cpf }))
+  }
+
   return makeReadOnly({
-    create: function ({ cpf }) {
-      if (!cpf)
-        throw new Error('Você deve inserir um CPF válido (makeCPFFactory)')
-
-      if (!cpfValido(cpf)) throw new Error('CPF inválido (makeCPFFactory)')
-
-      return makeReadOnly(new UserCPF({ cpf }))
-    },
+    create,
   })
 }

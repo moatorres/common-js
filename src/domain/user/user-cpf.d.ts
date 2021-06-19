@@ -12,4 +12,4 @@ interface CPFFactoryProps {
 }
 
 export function CPFBuilder(): CPFBuilderProps
-export function makeCPFFactory(): CPFFactoryProps
+export function makeCPF(): CPFFactoryProps
