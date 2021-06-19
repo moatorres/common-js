@@ -1,17 +1,17 @@
 import { makeReadOnly } from '../../utils'
 
-const UserCookies = function ({
+const userCookies = ({
   essenciais = true,
   analytics = false,
   marketing = false,
-} = {}) {
-  this.essenciais = essenciais
-  this.analytics = analytics
-  this.marketing = marketing
-  this.consentido_em = new Date().toISOString()
-}
+}) => ({
+  essenciais,
+  analytics,
+  marketing,
+  consentido_em: new Date().toISOString(),
+})
 
-export const UserCookiesBuilder = function () {
+export const userCookiesBuilder = function () {
   let props = {
     analytics: false,
     marketing: false,
@@ -22,13 +22,13 @@ export const UserCookiesBuilder = function () {
   return {
     toggle: function (prop) {
       if (!allowedProps.includes(prop))
-        throw new Error('Propriedade inválida (UserCookiesBuilder)')
+        throw new Error('Propriedade inválida (userCookiesBuilder)')
 
       props[prop] = !props[prop]
       return this
     },
     build: function () {
-      return makeReadOnly(new UserCookies(props))
+      return makeReadOnly(userCookies(props))
     },
   }
 }

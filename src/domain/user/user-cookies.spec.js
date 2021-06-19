@@ -1,6 +1,6 @@
-import { UserCookiesBuilder } from './user-cookies'
+import { userCookiesBuilder } from './user-cookies'
 
-let builder = UserCookiesBuilder()
+let builder = userCookiesBuilder()
 
 describe('UserCookiesBuilder', () => {
   describe('.build()', () => {

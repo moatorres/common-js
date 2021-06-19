@@ -12,4 +12,4 @@ interface UserCookiesBuilderProps {
   build: () => UserCookies
 }
 
-export function UserCookiesBuilder(): UserCookiesBuilderProps
+export function userCookiesBuilder(): UserCookiesBuilderProps
