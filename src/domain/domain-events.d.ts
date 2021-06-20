@@ -1,11 +1,15 @@
 import { EventEmitter } from 'events'
+import { Aggregate } from './aggregate'
+import { Entity } from './make-entity'
+import { Identifier } from './identifier'
 
-type DomainEvents = () => {
+type IDomainEvents = () => {
   add: ({ evento, callback }: IHandler) => void
-  register: (nome: string, payload: Payload) => void
-  dispatch: ({ evento, payload }: IEvent) => {}
+  register: ({ evento, payload }: IEvent) => void
+  dispatch: ({ evento, payload }: IEvent) => void
   dispatchAll: () => void
   getEventList: () => IEvent[]
+  removeFromList: (aggregate: Entity | Aggregate) => void
   clearEventList: () => void
   getHandlers: () => object
   clearHandlers: () => void
@@ -16,16 +20,19 @@ interface IHandler {
   callback: Function
 }
 
-type Payload = object | string | number | Date
+interface IPayload {
+  id: Identifier | string
+  body?: object | string | number
+  timestamp?: Date
+}
 
 interface IEvent {
   evento: string
-  payload: Payload
-  date?: Date
+  payload: IPayload
 }
 
-export function makeDomainEvents({
-  handler,
-}: {
+interface IEventHandler {
   handler: EventEmitter
-}): DomainEvents
+}
+
+export function makeDomainEventsHandler({}: IEventHandler): IDomainEvents
