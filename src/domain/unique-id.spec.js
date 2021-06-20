@@ -34,24 +34,6 @@ describe('makeIdFactory()', () => {
       let id = UniqueID.create('123123')
       expect(id.toValue()).not.toBeNull()
     })
-  })
-
-  describe('Identifier', () => {
-    it('.equals() should return "true" if provided an Identifier object instance with same "id" value', () => {
-      expect(id.equals(id)).toBe(true)
-    })
-
-    it('.toValue() should return a value', () => {
-      const valueValido = formatoEsperado(id.toValue())
-
-      expect(valueValido).toBeTrue()
-    })
-
-    it('.toString() should return a string value', () => {
-      expect(typeof id.toString()).toBe('string')
-      const stringValida = formatoEsperado(id.toString())
-      expect(stringValida).toBeTrue()
-    })
 
     it('Should accept a custom "id" value', () => {
       let id = UniqueID.create('123123')
