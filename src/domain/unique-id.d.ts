@@ -1,12 +1,7 @@
-export interface Identifier {
-  equals: (id: Identifier) => boolean
-  toString: () => string
-  toValue: () => string
+import { Identifier } from './identifier'
+
+interface IUniqueID {
+  create: (id?: string | number) => Identifier
 }
 
-interface UniqueID {
-  create: (id?: string) => Identifier
-}
-
-export function makeIdFactory({ nanoid }: any): UniqueID
-export function makeIdentifier(id: string): Identifier
+export function makeIdFactory({ nanoid }: any): IUniqueID

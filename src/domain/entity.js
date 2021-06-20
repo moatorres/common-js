@@ -1,4 +1,4 @@
-import { makeIdentifier } from './unique-id'
+import { makeIdentifier } from './identifier'
 
 const Entity = ({ props, id }) => {
   let _id = id ? id : makeIdentifier(id) // FIXME: should create an id
@@ -8,7 +8,6 @@ const Entity = ({ props, id }) => {
 
   function equals(object) {
     if (object == null || object == undefined) return false
-    // if (this.constructor !== Entity) return false
     return _id.equals(object.getId())
   }
 
@@ -16,9 +15,6 @@ const Entity = ({ props, id }) => {
     props: _props,
     getId,
     equals,
-    // __proto__: {
-    //   constructor: Entity,
-    // },
   }
 }
 

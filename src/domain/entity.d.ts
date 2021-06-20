@@ -1,8 +1,8 @@
-import { Identifier } from './unique-id'
+import { Identifier } from './identifier'
 
 export interface IEntity {
   props: object
-  getId: () => Identifier | string
+  getId: () => Identifier
   equals: (objeto: object) => boolean
 }
 

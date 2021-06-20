@@ -1,5 +1,5 @@
 import { makeEntity } from './entity'
-import { makeIdentifier } from './unique-id'
+import { makeIdentifier } from './identifier'
 
 let id = makeIdentifier('1')
 let newId = makeIdentifier('2')
