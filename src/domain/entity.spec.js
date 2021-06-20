@@ -5,9 +5,32 @@ let id = makeIdentifier('1')
 let newId = makeIdentifier('2')
 const entidade = makeEntity({ id: id, props: { nome: 'Moka' } })
 
-describe('Entity Class', () => {
+describe('Entity', () => {
+  describe('.id', () => {
+    it('Should be defined', () => {
+      expect(entidade.id).toBeDefined()
+    })
+
+    it('Should be a valid "Identifier" instance', () => {
+      expect(entidade.id.equals).toBeDefined()
+      expect(entidade.id.toString).toBeDefined()
+      expect(entidade.id.toValue).toBeDefined()
+    })
+  })
+
+  describe('.props', () => {
+    it('Should be defined', () => {
+      expect(entidade.props).toBeDefined()
+    })
+
+    it('Should be a valid object', () => {
+      expect(entidade.props instanceof Object).toBeTrue()
+    })
+  })
+
   describe('.equals()', () => {
     it('Should be defined', () => {
+      console.log(entidade)
       expect(entidade.equals).toBeDefined()
     })
 
