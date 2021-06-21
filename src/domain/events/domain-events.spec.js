@@ -6,7 +6,7 @@ import {
   eventHandlerFoiChamado,
 } from './domain-events.spec.setup'
 
-let dbEntry = makeAggregate({ id: 1, props: { nome: 'Moka' } })
+let dbEntry = makeAggregate({ props: { nome: 'Moka' } })
 
 beforeEach(() => {
   // subscriber registers an 'UserCreatedEvent'

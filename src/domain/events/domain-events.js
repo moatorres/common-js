@@ -55,7 +55,7 @@ const makeDomainEventsHandler = () => {
       )
     }
 
-    console.log('[Event Dispatched]:', eventName)
+    console.info('[Event Dispatched]:', eventName)
 
     if (handlers.hasOwnProperty(eventName)) {
       const _handlers = handlers[eventName]
