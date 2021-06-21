@@ -12,4 +12,7 @@ interface EntityAttrs {
   props: IValueObject | object
 }
 
+function idHandler(id: any): Identifier
+function isStringOrNumber(value: any): boolean
+
 export const makeEntity = ({ props, id }: EntityAttrs) => IEntity
