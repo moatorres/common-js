@@ -1,3 +1,4 @@
+import nanoid from 'nanoid'
 import makeReadOnly from '../utils/make-read-only'
 import { makeIdentifier } from './identifier'
 
@@ -14,3 +15,5 @@ export function makeIdFactory({ nanoid }) {
     create: gerarId,
   })
 }
+
+export const makeId = () => makeIdFactory({ nanoid }).create()

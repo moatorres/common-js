@@ -5,3 +5,4 @@ interface IUniqueID {
 }
 
 export function makeIdFactory({ nanoid }: any): IUniqueID
+export const makeId = () => IUniqueID
