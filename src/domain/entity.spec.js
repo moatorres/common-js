@@ -3,7 +3,7 @@ import { makeIdentifier } from './identifier'
 
 let id = makeIdentifier('1')
 let newId = makeIdentifier('2')
-const entidade = makeEntity({ id: id, props: { nome: 'Moka' } })
+const entidade = makeEntity({ props: { nome: 'Moka' } })
 
 describe('Entity', () => {
   describe('.id', () => {

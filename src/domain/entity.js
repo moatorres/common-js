@@ -1,8 +1,8 @@
 import makeReadOnly from '../utils/make-read-only'
-import { makeIdentifier } from './identifier'
+import { makeId } from './unique-id'
 
 const Entity = ({ props, id }) => {
-  let _id = id ? id : makeIdentifier(id) // FIXME: should create an id
+  let _id = id ? id : makeId()
   let _props = {
     ...props,
   }
