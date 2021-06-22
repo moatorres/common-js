@@ -5,15 +5,15 @@ import { domainEvents } from './events/domain-events'
 const Aggregate = (entity) => {
   let _events = []
 
+  function addEvent(event) {
+    _events.push(event)
+    domainEvents.addToList(this)
+    logEventAdded(event.name)
+  }
+
   const clearEvents = () => {
     _events.splice(0, _events.length)
     console.info('[Events Cleared]:', _events)
-  }
-
-  const addEvent = (event) => {
-    _events.push(event)
-    domainEvents.addToList(event.aggregate)
-    logEventAdded(event.name)
   }
 
   const logEventAdded = (event) => console.info(`[Event Added]: ${event}`)
