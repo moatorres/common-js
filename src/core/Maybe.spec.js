@@ -68,7 +68,7 @@ describe('Maybe', () => {
     expect(actual).toBe(false)
   })
 
-  it('should throw an error if the value is not valid', () => {
+  it('should throw an error if receives a null value', () => {
     expect(() => {
       Maybe.just(null)
     }).toThrowError()

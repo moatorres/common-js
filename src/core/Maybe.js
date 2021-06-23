@@ -1,3 +1,20 @@
+import {
+  isNumberZero,
+  isFalse,
+  isEmptyString,
+  isNullOrUndefined,
+} from '../utils'
+
+function isValid(value) {
+  return (
+    !!value ||
+    isNumberZero(value) ||
+    isFalse(value) ||
+    isEmptyString(value) ||
+    !isNullOrUndefined(value)
+  )
+}
+
 export class Maybe {
   constructor(value) {
     this.value = value
@@ -108,30 +125,4 @@ export class Nothing extends Maybe {
   isJust() {
     return false
   }
-}
-
-function isValid(value) {
-  return (
-    !!value ||
-    isNumberZero(value) ||
-    isFalse(value) ||
-    isEmptyString(value) ||
-    isNullOrUndefined(value)
-  )
-}
-
-function isNumberZero(value) {
-  return typeof value === 'number' && value === 0
-}
-
-function isEmptyString(value) {
-  return typeof value === 'string' && value === ''
-}
-
-function isFalse(value) {
-  return typeof value === 'boolean' && !value
-}
-
-function isNullOrUndefined(value) {
-  return value !== null && value !== undefined
 }
