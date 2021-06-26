@@ -17,9 +17,11 @@ interface ITuple<F, S> {
   some(pred: (value: F | S) => boolean): boolean
 }
 
-interface ITupleType {
-  of<F, S>([fst, snd]: [F, S]): ITuple<F, S>
+interface ITupleType<F, S> {
+  <F, S>(first: F, second: S): ITuple<F, S>
+  of<F, S>(fst: F, snd: S): ITuple<F, S>
   fromArray<F, S>([fst, snd]: [F, S]): ITuple<F, S>
+  fromArray<F, S>([fst, snd]: (F | S)[]): ITuple<F, S>
   fanout<F, S, T>(
     f: (value: T) => F,
     g: (value: T) => S,

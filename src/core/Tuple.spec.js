@@ -19,7 +19,6 @@ describe('Static', () => {
     it('Should construct a tuple from an array with two elements', () => {
       let arr = [1, 'Pa']
       tup = Tuple.fromArray(arr)
-
       expect(tup.toArray()).toEqual(arr)
       expect(tup.equals(tup)).toBeTrue()
     })
@@ -31,10 +30,9 @@ describe('Static', () => {
     })
 
     it('Should construct a tuple from an array with two elements', () => {
-      let arr = [2, 'Blue']
-      tup = Tuple.of(arr)
+      tup = Tuple.of(2, 'Blue')
 
-      expect(tup.toArray()).toEqual(arr)
+      expect(tup.toArray()).toEqual([2, 'Blue'])
       expect(tup.equals(tup)).toBeTrue()
     })
   })

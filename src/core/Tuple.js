@@ -27,18 +27,23 @@ const makeTuple = (first, second) => ({
   },
 })
 
-export const Tuple = Object.assign((fst, snd) => makeTuple(fst, snd), {
-  of: ([fst, snd]) => makeTuple(fst, snd),
-  fromArray: ([fst, snd]) => makeTuple(fst, snd),
-  fanout: function (...args) {
-    const [f, g, value] = args
-    switch (args.length) {
-      case 3:
-        return makeTuple(f(value), g(value))
-      case 2:
-        return (value) => this.fanout(f, g, value)
-      default:
-        return (g) => (value) => this.fanout(f, g, value)
-    }
+export const Tuple = Object.assign(
+  function Tuple(fst, snd) {
+    return makeTuple(fst, snd)
   },
-})
+  {
+    of: (fst, snd) => makeTuple(fst, snd),
+    fromArray: ([fst, snd]) => makeTuple(fst, snd),
+    fanout: function (...args) {
+      const [f, g, value] = args
+      switch (args.length) {
+        case 3:
+          return makeTuple(f(value), g(value))
+        case 2:
+          return (value) => this.fanout(f, g, value)
+        default:
+          return (g) => (value) => this.fanout(f, g, value)
+      }
+    },
+  }
+)
