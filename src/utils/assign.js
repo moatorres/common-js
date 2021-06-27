@@ -1,7 +1,6 @@
 import getOwnPropertyKeys from './get-own-property-keys'
-import mergeOrAssign from './merge-or-assign'
 
-const _assign = (destino, origem) => {
+const assign = (destino, origem) => {
   if (!origem) return destino
 
   let keys = getOwnPropertyKeys(origem)
@@ -14,7 +13,5 @@ const _assign = (destino, origem) => {
 
   return destino
 }
-
-const assign = mergeOrAssign.bind(0, _assign)
 
 export default assign
