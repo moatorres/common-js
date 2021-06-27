@@ -13,3 +13,8 @@ const removeNullProps = (original) => {
 }
 
 export default removeNullProps
+
+// ES2019+
+// const removeNull = (objeto) => {
+//   return Object.fromEntries(Object.entries(objeto).filter(([_, value]) => value != null))
+// }
