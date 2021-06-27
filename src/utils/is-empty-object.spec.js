@@ -7,8 +7,6 @@ describe('isEmptyObject()', () => {
 
   it('Should return "true" if receives an empty object', () => {
     let oops
-    let res = isEmptyObject('')
-
     expect(isEmptyObject({})).toBeTrue()
     expect(isEmptyObject({ name: oops })).toBeFalse()
     expect(isEmptyObject(false)).toBeFalse()
