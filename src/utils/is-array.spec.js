@@ -18,7 +18,7 @@ describe('Utilities isArray()', () => {
     let weakmap = new WeakMap()
     let set = new Set()
     let weakset = new WeakSet()
-    let regex = new RegExp()
+    let regex = new RegExp(/^/)
     let strTwo = String(1)
     let numTwo = Number('1')
 
