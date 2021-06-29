@@ -1,20 +1,20 @@
-function checkTypeOf(value) {
-  if (Array.isArray(value)) return 'array'
-  else return typeof value
+import isArray from './is-array'
+
+function getTypeOf(value) {
+  return isArray(value) ? 'array' : typeof value
 }
 
 const getPropTypes = (obj, withValue = false) => {
   let types = []
 
-  Object.keys(obj).map((key) => {
+  for (let key in obj) {
     let val = obj[key]
-
-    let checked = { key: key, type: checkTypeOf(val) }
+    let checked = { key: key, type: getTypeOf(val) }
 
     if (withValue) checked.value = val
-
     types.push(checked)
-  })
+  }
+
   return { types }
 }
 

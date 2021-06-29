@@ -1,4 +1,5 @@
 import getTag from './get-tag'
+import isArray from './is-array'
 
 function isString(value) {
   const type = typeof value
@@ -7,7 +8,7 @@ function isString(value) {
     type === 'string' ||
     (type === 'object' &&
       value != null &&
-      !Array.isArray(value) &&
+      !isArray(value) &&
       getTag(value) == '[object String]')
   )
 }

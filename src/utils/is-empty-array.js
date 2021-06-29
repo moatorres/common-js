@@ -1,5 +1,7 @@
+import isArray from './is-array'
+
 function isEmptyArray(value) {
-  return Array.isArray(value) && value.length === 0
+  return isArray(value) && value.length === 0
 }
 
 export default isEmptyArray

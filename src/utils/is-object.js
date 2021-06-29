@@ -1,4 +1,5 @@
 import getTag from './get-tag'
+import isArray from './is-array'
 
 /**
  * Checks if `value` is the of type `Object`.
@@ -16,7 +17,7 @@ function isObject(value) {
   return (
     value != null &&
     type === 'object' &&
-    !Array.isArray(value) &&
+    !isArray(value) &&
     getTag(value) === '[object Object]'
   )
 }
