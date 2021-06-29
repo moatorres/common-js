@@ -45,6 +45,7 @@ describe('CPF Factory', () => {
     const objeto = factory.create({ cpf: '888.888.888-88' })
 
     expect(objeto).toBeFrozen()
+    // @ts-ignore
     expect(() => (objeto.cpf = '999.999.999-99')).toThrow()
   })
 
@@ -70,6 +71,7 @@ describe('CPF Factory', () => {
 
     it('Should return an object a valid "cpf" value', () => {
       const objeto = factory.create({ cpf: '777.777.777-77' })
+      // @ts-ignore
       expect(objeto.cpf).toEqual('777.777.777-77')
     })
   })

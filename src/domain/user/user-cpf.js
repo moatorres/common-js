@@ -1,8 +1,11 @@
-import { regex, makeReadOnly } from '../../utils'
+import { makeReadOnly } from '../../utils'
+import { RegexLib } from '../../regex'
 
 const userCPF = ({ cpf }) => ({ cpf })
 
-const cpfValido = (cpf) => cpf && typeof cpf === 'string' && regex.cpf.test(cpf)
+const cpfValido = (cpf) => {
+  return cpf && typeof cpf === 'string' && RegexLib.CPF.test(cpf)
+}
 
 export const CPFBuilder = () => {
   function setCPF(cpf) {

@@ -1,4 +1,5 @@
-import { makeReadOnly, makeWordLengthRange, isString } from '../../utils'
+import { makeWordLengthRange } from '../../regex'
+import { makeReadOnly, isString } from '../../utils'
 
 const nomeRange = makeWordLengthRange(2, 30) // Number, Number → RegEx
 const rangeValido = (i) => nomeRange.test(i) // String → Boolean

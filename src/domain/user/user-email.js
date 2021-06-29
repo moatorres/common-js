@@ -1,6 +1,7 @@
-import { regex, makeReadOnly } from '../../utils'
+import { RegexLib } from '../../regex/patterns'
+import { makeReadOnly } from '../../utils'
 
-const emailValido = (email) => regex.email.test(email)
+const emailValido = (email) => RegexLib.Email.test(email)
 
 const userEmail = ({ email }) => ({ email })
 
