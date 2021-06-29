@@ -1,4 +1,4 @@
-import { RegexLib } from '../../regex/patterns'
+import { RegexLib } from '../../regex'
 import { makeReadOnly } from '../../utils'
 
 const emailValido = (email) => RegexLib.Email.test(email)
