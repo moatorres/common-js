@@ -5,15 +5,15 @@ interface IEndereco {
 }
 
 interface IEnderecoBuilder {
-  setBairro: (bairro: string) => IEnderecoBuilder | Error
-  setCidade: (cidade: string) => IEnderecoBuilder | Error
-  setEstado: (estado: string) => IEnderecoBuilder | Error
-  setConta: (conta: string) => IEnderecoBuilder | Error
-  build: () => IEndereco | Error
+  setBairro: (bairro: string) => IEnderecoBuilder
+  setCidade: (cidade: string) => IEnderecoBuilder
+  setEstado: (estado: string) => IEnderecoBuilder
+  setConta: (conta: string) => IEnderecoBuilder
+  build: () => IEndereco
 }
 
 interface IEnderecoFactory {
-  create: ({}: IEndereco) => IEndereco | Error
+  create: ({}: IEndereco) => IEndereco
 }
 
 export function makeEnderecoFactory(): IEnderecoFactory

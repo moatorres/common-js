@@ -41,6 +41,7 @@ describe('Endereco Builder', () => {
         .setCidade('Recife')
         .setEstado('Pernambuco')
         .build()
+        // @ts-ignore
         .setCidade('Salvador')
     ).toThrow()
 
@@ -50,6 +51,7 @@ describe('Endereco Builder', () => {
         .setCidade('Recife')
         .setEstado('PE')
         .build()
+        // @ts-ignore
         .setBairro('Pina')
     ).toThrow()
   })
