@@ -1,1 +1,1 @@
-export default function isArray(value: any): boolean
+export default function isArray<T>(value: T): boolean
