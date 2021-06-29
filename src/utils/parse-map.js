@@ -1,10 +1,7 @@
+import isStringifiedMap from './is-stringified-map'
+
 export default function parseMap(key, value) {
-  if (typeof value === 'object' && value !== null) {
-    if (value.dataType === 'Map') {
-      return new Map(value.value)
-    }
-  }
-  return value
+  return isStringifiedMap(value) ? new Map(value.value) : value
 }
 
 // usage!
