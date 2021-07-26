@@ -1,4 +1,4 @@
-import makeReadOnly from '../utils/make-read-only'
+import { makeReadOnly } from '../utils'
 
 export function WatchedList(initialItems = []) {
   let currentItems = initialItems ? initialItems : []
