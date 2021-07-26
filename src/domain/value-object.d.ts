@@ -4,7 +4,7 @@ export interface ValueObjectProps {
 
 interface IValueObject {
   props: ValueObjectProps
-  equals: (object: IValueObject | object) => boolean
+  isEqual: (object: IValueObject | object) => boolean
 }
 
 export const makeValueObject = (props: ValueObjectProps) => IValueObject

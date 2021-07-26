@@ -14,17 +14,17 @@ describe('makeValueObject', () => {
     })
   })
 
-  describe('.equals()', () => {
+  describe('.isEqual()', () => {
     it('Should be defined', () => {
-      expect(objeto.equals).toBeDefined()
+      expect(objeto.isEqual).toBeDefined()
     })
 
     it('Should return "true" if an object has the same props and values', () => {
-      expect(objeto.equals(objeto)).toBeTrue()
+      expect(objeto.isEqual(objeto)).toBeTrue()
     })
 
     it('Should return "false" if an object has NOT the same props and values', () => {
-      expect(objeto.equals(outro)).toBeFalse()
+      expect(objeto.isEqual(outro)).toBeFalse()
     })
   })
 })
