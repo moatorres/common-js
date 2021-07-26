@@ -14,13 +14,13 @@ const makeDomainEventsHandler = () => {
   }
 
   const removeFromList = (aggregate) => {
-    const index = list.findIndex((a) => a.equals(aggregate))
+    const index = list.findIndex((a) => a.isEqual(aggregate))
     list.splice(index, 1)
   }
 
   const findEvent = (id) => {
     let found = null
-    for (let aggregate of list) if (aggregate.id.equals(id)) found = aggregate
+    for (let aggregate of list) if (aggregate.id.isEqual(id)) found = aggregate
     return found
   }
 
