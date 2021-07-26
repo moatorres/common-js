@@ -3,8 +3,8 @@ import { makeIdentifier } from './identifier'
 let id = makeIdentifier('123')
 
 describe('Identifier', () => {
-  it('.equals() should return "true" if provided an Identifier object instance with same "id" value', () => {
-    expect(id.equals(id)).toBe(true)
+  it('.isEqual() should return "true" if provided an Identifier object instance with same "id" value', () => {
+    expect(id.isEqual(id)).toBe(true)
   })
 
   it('.toValue() should return an id value', () => {

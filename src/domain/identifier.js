@@ -1,4 +1,4 @@
-import makeReadOnly from '../utils/make-read-only'
+import { isFunction, isNullOrUndefined, makeReadOnly } from '../utils'
 
 const Identifier = (value) => {
   let _value = value
@@ -6,13 +6,13 @@ const Identifier = (value) => {
   const toString = () => String(_value)
   const toValue = () => _value
 
-  function equals(id) {
-    if (id === null || id === undefined) return false
+  function isEqual(id) {
+    if (isNullOrUndefined(id) || !isFunction(id.toValue)) return false
     return id.toValue() === _value
   }
 
   return makeReadOnly({
-    equals,
+    isEqual,
     toString,
     toValue,
   })
