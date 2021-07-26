@@ -15,10 +15,10 @@ describe('makeIdFactory()', () => {
     })
 
     it('Should return a valid instance of an Identifier object', () => {
-      expect(id.equals).toBeDefined()
+      expect(id.isEqual).toBeDefined()
       expect(id.toString).toBeDefined()
       expect(id.toValue).toBeDefined()
-      expect(id.equals(id)).toBe(true)
+      expect(id.isEqual(id)).toBe(true)
     })
 
     it('Instance should have an id value', () => {
@@ -38,10 +38,10 @@ describe('makeIdFactory()', () => {
     it('Should accept a custom "id" value', () => {
       let id = UniqueID.create('123123')
 
-      expect(id.equals).toBeDefined()
+      expect(id.isEqual).toBeDefined()
       expect(id.toString).toBeDefined()
       expect(id.toValue).toBeDefined()
-      expect(id.equals(id)).toBe(true)
+      expect(id.isEqual(id)).toBe(true)
 
       const valueValido = formatoEsperado(id.toValue())
       const stringValida = formatoEsperado(id.toString())

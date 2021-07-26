@@ -1,18 +1,18 @@
 import nanoid from 'nanoid'
-import makeReadOnly from '../utils/make-read-only'
+import { makeReadOnly } from '../utils'
 import { makeIdentifier } from './identifier'
 
 export function makeIdFactory({ nanoid }) {
-  function gerarId(id) {
-    const alfabeto = '0123456789abcdef'
-    const nano = nanoid.customAlphabet(alfabeto, 24)
+  function generateId(id) {
+    const chars = '0123456789abcdef'
+    const nano = nanoid.customAlphabet(chars, 24)
 
     const _id = id ? String(id) : nano()
     return makeReadOnly(makeIdentifier(_id))
   }
 
   return makeReadOnly({
-    create: gerarId,
+    create: generateId,
   })
 }
 
