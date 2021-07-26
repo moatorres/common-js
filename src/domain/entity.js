@@ -1,4 +1,4 @@
-import makeReadOnly from '../utils/make-read-only'
+import { isNullOrUndefined, isNumber, isString, makeReadOnly } from '../utils'
 import { makeIdentifier } from './identifier'
 import { makeId } from './unique-id'
 
@@ -8,27 +8,24 @@ function Entity({ props, id }) {
     ...props,
   }
 
-  function equals(object) {
-    if (object == null || object == undefined) return false
+  function isEqual(object) {
+    // if (object == null || object == undefined) return false
+    if (isNullOrUndefined(object)) return false
     if (this === object) return true
-    return _id.equals(object.id)
+    return _id.isEqual(object.id)
   }
 
   return {
     id: _id,
     props: _props,
-    equals: makeReadOnly(equals),
+    isEqual: makeReadOnly(isEqual),
   }
 }
 
 function idHandler(id) {
   if (!id) return makeId()
-  if (isStringOrNumber(id)) return makeIdentifier(id)
+  if (isString(id) || isNumber(id)) return makeIdentifier(id)
   return id
-}
-
-function isStringOrNumber(v) {
-  return typeof v === 'number' || typeof v === 'string'
 }
 
 export const makeEntity = (props) => Entity(props)

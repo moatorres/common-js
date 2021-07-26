@@ -4,7 +4,7 @@ import { IValueObject } from './value-object'
 export interface IEntity {
   id: Identifier
   props: object
-  equals: (objeto: IEntity | EntityAttrs) => boolean
+  isEqual: (objeto: IEntity | EntityAttrs) => boolean
 }
 
 interface EntityAttrs {

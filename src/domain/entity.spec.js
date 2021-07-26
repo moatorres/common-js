@@ -12,7 +12,7 @@ describe('Entity', () => {
     })
 
     it('Should be a valid "Identifier" instance', () => {
-      expect(entidade.id.equals).toBeDefined()
+      expect(entidade.id.isEqual).toBeDefined()
       expect(entidade.id.toString).toBeDefined()
       expect(entidade.id.toValue).toBeDefined()
     })
@@ -28,20 +28,19 @@ describe('Entity', () => {
     })
   })
 
-  describe('.equals()', () => {
+  describe('.isEqual()', () => {
     it('Should be defined', () => {
-      console.log(entidade)
-      expect(entidade.equals).toBeDefined()
+      expect(entidade.isEqual).toBeDefined()
     })
 
     it('Should return "true" if provided an object with the same "id"', () => {
-      expect(entidade.equals(entidade)).toBeTrue()
+      expect(entidade.isEqual(entidade)).toBeTrue()
     })
 
     it('Should return "false" if provided an object with a different "id"', () => {
       const outra = makeEntity({ id: newId, props: { nome: 'Floca' } })
 
-      expect(entidade.equals(outra)).toBeFalse()
+      expect(entidade.isEqual(outra)).toBeFalse()
     })
   })
 })
