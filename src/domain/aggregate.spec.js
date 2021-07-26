@@ -15,7 +15,7 @@ describe('Aggregate', () => {
     })
 
     it('Should be a valid instance of Identifier', () => {
-      expect(aggregate.id.equals).toBeDefined()
+      expect(aggregate.id.isEqual).toBeDefined()
       expect(aggregate.id.toString).toBeDefined()
       expect(aggregate.id.toValue).toBeDefined()
     })
@@ -81,17 +81,17 @@ describe('Aggregate', () => {
     })
   })
 
-  describe('.equals()', () => {
+  describe('.isEqual()', () => {
     it('Should be defined', () => {
-      expect(aggregate.equals).toBeDefined()
+      expect(aggregate.isEqual).toBeDefined()
     })
 
     it('Should return "true" if the passed "object.id" is equal to its "id"', () => {
-      expect(aggregate.equals(aggregate)).toBeTrue()
+      expect(aggregate.isEqual(aggregate)).toBeTrue()
     })
 
     it('Should return "false" if the passed "object.id" is NOT equal to its "id"', () => {
-      expect(anotherAgreggate.equals(aggregate)).toBeFalse()
+      expect(anotherAgreggate.isEqual(aggregate)).toBeFalse()
     })
   })
 })

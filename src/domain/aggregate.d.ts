@@ -6,7 +6,7 @@ import { IEntity } from './entity'
 interface IAggregate {
   id: Identifier
   props: ValueObjectProps
-  equals: (object: IEntity | IAggregate) => boolean
+  isEqual: (object: IEntity | IAggregate) => boolean
   domainEvents(): IEvent[] | []
   addEvent(event: IEvent): void
   clearEvents(): void

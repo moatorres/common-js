@@ -1,26 +1,26 @@
-import pipe from '../utils/pipe'
+import { pipe } from '../utils'
 import { makeEntity } from './entity'
 import { domainEvents } from './events/domain-events'
 
 const Aggregate = (entity) => {
-  let _events = []
+  let events = []
 
   function addEvent(event) {
-    _events.push(event)
+    events.push(event)
     domainEvents.addToList(this)
     logEventAdded(event.name)
   }
 
   const clearEvents = () => {
-    _events.splice(0, _events.length)
-    console.info('[Events Cleared]:', _events)
+    events.splice(0, events.length)
+    console.info('[Events Cleared]:', events)
   }
 
   const logEventAdded = (event) => console.info(`[Event Added]: ${event}`)
 
   return {
     addEvent,
-    domainEvents: _events,
+    domainEvents: events,
     clearEvents,
     ...entity,
   }
