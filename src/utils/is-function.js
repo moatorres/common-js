@@ -1,3 +1,4 @@
+import { TypeTags } from '../internal/type-tags'
 import getTag from './get-tag'
 
 /**
@@ -17,7 +18,7 @@ import getTag from './get-tag'
  * // => false
  */
 function isFunction(value) {
-  return typeof value === 'function' && getTag(value) === '[object Function]'
+  return typeof value === 'function' && getTag(value) == TypeTags.Function
 }
 
 export default isFunction

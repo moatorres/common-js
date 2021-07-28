@@ -1,3 +1,4 @@
+import { TypeTags } from '../internal/type-tags'
 import getTag from './get-tag'
 import isArray from './is-array'
 
@@ -9,7 +10,7 @@ function isString(value) {
     (type === 'object' &&
       value != null &&
       !isArray(value) &&
-      getTag(value) == '[object String]')
+      getTag(value) == TypeTags.String)
   )
 }
 

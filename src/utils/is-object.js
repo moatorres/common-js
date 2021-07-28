@@ -1,5 +1,7 @@
+import { TypeTags } from '../internal/type-tags'
 import getTag from './get-tag'
 import isArray from './is-array'
+import isObjectLike from './is-object-like'
 
 /**
  * Checks if `value` is the of type `Object`.
@@ -13,12 +15,8 @@ import isArray from './is-array'
  *
  */
 function isObject(value) {
-  const type = typeof value
   return (
-    value != null &&
-    type === 'object' &&
-    !isArray(value) &&
-    getTag(value) === '[object Object]'
+    isObjectLike(value) && !isArray(value) && getTag(value) === TypeTags.Object
   )
 }
 
