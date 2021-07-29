@@ -2,13 +2,13 @@ import isNull from './is-null'
 import isString from './is-string'
 import isSymbol from './is-symbol'
 import isArray from './is-array'
-import isKey from './is-key'
+import isValidKeyName from './is-valid-key-name'
 import stringToPath from './string-to-path'
 
 function castPath(value, object) {
   return isArray(value)
     ? value
-    : isKey(value, object)
+    : isValidKeyName(value, object)
     ? [value]
     : /* otherwise */ stringToPath(value)
 }
