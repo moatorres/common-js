@@ -1,1 +1,1 @@
-export default function mapReviver(key: any, value: any): Map
+export default function mapReviver(key: any, value: T): Map | T
