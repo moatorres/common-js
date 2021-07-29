@@ -1,9 +1,9 @@
-import parseMap from './parse-map'
+import mapReviver from './parse-map'
 import stringifyMap from './stringify-map'
 
-describe('parseMap()', () => {
+describe('mapReviver()', () => {
   it('Should be defined', () => {
-    expect(parseMap).toBeDefined()
+    expect(mapReviver).toBeDefined()
   })
 
   it('Should allow us to successfully parse Map objects by adding it as a second argument to JSON.parse native function', () => {
@@ -13,7 +13,7 @@ describe('parseMap()', () => {
     ])
 
     let stringified = JSON.stringify(myMap, stringifyMap)
-    let parsed = JSON.parse(stringified, parseMap)
+    let parsed = JSON.parse(stringified, mapReviver)
 
     expect(parsed).toEqual(myMap)
     expect(parsed instanceof Map).toBeTrue()
