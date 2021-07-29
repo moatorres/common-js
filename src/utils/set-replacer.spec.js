@@ -1,16 +1,16 @@
-import stringifySet from './stringify-set'
-import parseSet from './parse-set'
+import setReplacer from './set-replacer'
+import setReviver from './set-reviver'
 
-describe('stringifySet()', () => {
+describe('setReplacer()', () => {
   it('Should be defined', () => {
-    expect(stringifySet).toBeDefined()
+    expect(setReplacer).toBeDefined()
   })
 
   it('Should allow us to successfully stringify Set objects by passing it as a second argument to JSON.stringify native function', () => {
     let mySet = new Set([1, 2, 3])
 
-    let stringified = JSON.stringify(mySet, stringifySet)
-    let parsed = JSON.parse(stringified, parseSet)
+    let stringified = JSON.stringify(mySet, setReplacer)
+    let parsed = JSON.parse(stringified, setReviver)
 
     expect(parsed).toEqual(mySet)
     expect(parsed.has(1)).toBeTrue()

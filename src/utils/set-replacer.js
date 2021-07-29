@@ -1,4 +1,4 @@
-export default function stringifySet(key, value) {
+export default function setReplacer(key, value) {
   if (!(value instanceof Set)) return value
 
   return {
@@ -8,4 +8,4 @@ export default function stringifySet(key, value) {
 }
 
 // usage!
-// const val = JSON.stringify(mySet, stringifySet)
+// const val = JSON.stringify(mySet, setReplacer)

@@ -1,15 +1,11 @@
 import isStringifiedMap from './is-stringified-map'
 import isStringifiedSet from './is-stringified-set'
 import makeReadOnly from './make-read-only'
+import setReplacer from './set-replacer'
 
 // helpers
 const transformMap = (value) => ({
   dataType: 'Map',
-  value: [...value],
-})
-
-const transformSet = (value) => ({
-  dataType: 'Set',
   value: [...value],
 })
 
@@ -23,7 +19,7 @@ function safeStringifier(key, value) {
   return value instanceof Map
     ? transformMap(value)
     : value instanceof Set
-    ? transformSet(value)
+    ? setReplacer(null, value)
     : value
 }
 
