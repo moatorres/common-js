@@ -1,5 +1,5 @@
 import stringifyMap from './stringify-map'
-import parseMap from './parse-map'
+import mapReviver from './map-reviver'
 
 describe('stringifyMap()', () => {
   it('Should be defined', () => {
@@ -13,7 +13,7 @@ describe('stringifyMap()', () => {
     ])
 
     let stringified = JSON.stringify(myMap, stringifyMap)
-    let parsed = JSON.parse(stringified, parseMap)
+    let parsed = JSON.parse(stringified, mapReviver)
 
     expect(parsed).toEqual(myMap)
     expect(parsed instanceof Map).toBeTrue()

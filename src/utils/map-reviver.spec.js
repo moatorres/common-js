@@ -1,4 +1,4 @@
-import mapReviver from './parse-map'
+import mapReviver from './map-reviver'
 import stringifyMap from './stringify-map'
 
 describe('mapReviver()', () => {
