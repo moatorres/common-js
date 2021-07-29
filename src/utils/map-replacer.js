@@ -1,4 +1,4 @@
-export default function stringifyMap(key, value) {
+export default function mapReplacer(key, value) {
   if (!(value instanceof Map)) return value
 
   return {
@@ -8,4 +8,4 @@ export default function stringifyMap(key, value) {
 }
 
 // usage!
-// const str = JSON.stringify(myMap, stringifyMap)
+// const str = JSON.stringify(myMap, mapReplacer)
