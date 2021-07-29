@@ -15,7 +15,7 @@ describe('isSet()', () => {
     expect(isSet).toBeDefined()
   })
 
-  it('Should return "false" if receives a non-RegExp value', () => {
+  it('Should return "false" if receives a non-Set type value', () => {
     expect(isSet(undefined)).toBeFalse()
     expect(isSet(number)).toBeFalse()
     expect(isSet(string)).toBeFalse()
@@ -25,7 +25,7 @@ describe('isSet()', () => {
     expect(isSet(regex)).toBeFalse()
   })
 
-  it('Should return "true" if receives a RegExp value', () => {
+  it('Should return "true" if receives a Set type value', () => {
     expect(isSet(set)).toBeTrue()
     expect(isSet(alsoSet)).toBeTrue()
   })
