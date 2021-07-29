@@ -1,5 +1,5 @@
-import getByIndex from './get-by-index'
+import getBy from './get-by'
 
-const head = (v) => getByIndex(0, v)
+const head = (v) => getBy(0, v)
 
 export default head
