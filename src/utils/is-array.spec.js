@@ -1,7 +1,7 @@
 import isArray from './is-array'
 
 describe('Utilities isArray()', () => {
-  it('Should return `true` if passed an array type object', () => {
+  it('Should return `true` if receives an array type object', () => {
     let arr = []
     let arrTwo = Array(10)
     let arrThree = [1, '2', () => {}]
@@ -10,7 +10,7 @@ describe('Utilities isArray()', () => {
     expect(isArray(arrThree)).toEqual(true)
   })
 
-  it('Should return `false` if not passed an array type object', () => {
+  it('Should return `false` if receives NOT an array type', () => {
     let str = ''
     let fn = () => {}
     let num = 1
