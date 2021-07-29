@@ -1,5 +1,5 @@
 import mapReviver from './map-reviver'
-import stringifyMap from './stringify-map'
+import mapReplacer from './map-replacer'
 
 describe('mapReviver()', () => {
   it('Should be defined', () => {
@@ -12,7 +12,7 @@ describe('mapReviver()', () => {
       [2, 'floca'],
     ])
 
-    let stringified = JSON.stringify(myMap, stringifyMap)
+    let stringified = JSON.stringify(myMap, mapReplacer)
     let parsed = JSON.parse(stringified, mapReviver)
 
     expect(parsed).toEqual(myMap)
