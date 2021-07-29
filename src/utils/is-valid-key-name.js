@@ -8,7 +8,7 @@ const deepPropRegex = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/
 const plainPropRegex = /^\w*$/
 
 function isPropMatch(value) {
-  return plainPropRegex.test(value) || deepPropRegex.test(value)
+  return plainPropRegex.test(value) || !deepPropRegex.test(value)
 }
 
 function isValidKeyName(value, object) {
