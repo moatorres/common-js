@@ -19,6 +19,7 @@
     "clean": "rm -rf dist",
     "test": "jest",
     "test:dev": "jest --watchAll --no-cache",
+    "test:clear": "jest --clearCache",
     "test:cov": "jest --coverage",
     "build": "yarn clean && babel src -d dist --ignore \"**/*.spec.js,**/temp\" && copyfiles -u 1 \"src/**/*.d.ts\" dist",
     "pub": "yarn version && yarn release",
