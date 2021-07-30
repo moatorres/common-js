@@ -6,6 +6,7 @@ export const TypeTags = makeReadOnly({
   BigInt64Array: '[object BigInt64Array]',
   BigUint64Array: '[object BigUint64Array]',
   Boolean: '[object Boolean]',
+  Date: '[object Date]',
   Error: '[object Error]',
   Float32Array: '[object Float32Array]',
   Float64Array: '[object Float64Array]',
@@ -14,6 +15,7 @@ export const TypeTags = makeReadOnly({
   Int16Array: '[object Int16Array]',
   Int32Array: '[object Int32Array]',
   Map: '[object Map]',
+  Math: '[object Math]',
   Null: '[object Null]',
   Number: '[object Number]',
   Object: '[object Object]',
@@ -27,5 +29,6 @@ export const TypeTags = makeReadOnly({
   Uint32Array: '[object Uint32Array]',
   Undefined: '[object Undefined]',
   WeakMap: '[object WeakMap]',
+  WeakRef: '[object WeakRef]',
   WeakSet: '[object WeakSet]',
 })

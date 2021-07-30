@@ -4,6 +4,7 @@ type Names =
   | 'BigInt64Array'
   | 'BigUint64Array'
   | 'Boolean'
+  | 'Date'
   | 'Error'
   | 'Float32Array'
   | 'Float64Array'
@@ -12,6 +13,7 @@ type Names =
   | 'Int16Array'
   | 'Int32Array'
   | 'Map'
+  | 'Math'
   | 'Null'
   | 'Number'
   | 'Object'
@@ -25,6 +27,7 @@ type Names =
   | 'Uint32Array'
   | 'Undefined'
   | 'WeakMap'
+  | 'WeakRef'
   | 'WeakSet'
 
 type Tags =
@@ -33,6 +36,7 @@ type Tags =
   | '[object BigInt64Array]'
   | '[object BigUint64Array]'
   | '[object Boolean]'
+  | '[object Date]'
   | '[object Error]'
   | '[object Float32Array]'
   | '[object Float64Array]'
@@ -41,6 +45,7 @@ type Tags =
   | '[object Int16Array]'
   | '[object Int32Array]'
   | '[object Map]'
+  | '[object Math]'
   | '[object Null]'
   | '[object Number]'
   | '[object Object]'
@@ -54,6 +59,7 @@ type Tags =
   | '[object Uint32Array]'
   | '[object Undefined]'
   | '[object WeakMap]'
+  | '[object WeakRef]'
   | '[object WeakSet]'
 
 interface ITypeTags {
@@ -66,6 +72,7 @@ interface ITags {
   BigInt64Array: '[object BigInt64Array]'
   BigUint64Array: '[object BigUint64Array]'
   Boolean: '[object Boolean]'
+  Date: '[object Date]'
   Error: '[object Error]'
   Float32Array: '[object Float32Array]'
   Float64Array: '[object Float64Array]'
@@ -74,6 +81,7 @@ interface ITags {
   Int16Array: '[object Int16Array]'
   Int32Array: '[object Int32Array]'
   Map: '[object Map]'
+  Math: '[object Math]'
   Null: '[object Null]'
   Number: '[object Number]'
   Object: '[object Object]'
@@ -87,6 +95,7 @@ interface ITags {
   Uint32Array: '[object Uint32Array]'
   Undefined: '[object Undefined]'
   WeakMap: '[object WeakMap]'
+  WeakRef: '[object WeakRef]'
   WeakSet: '[object WeakSet]'
 }
 
