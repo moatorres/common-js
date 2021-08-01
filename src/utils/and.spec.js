@@ -13,7 +13,7 @@ describe('and()', () => {
     expect(res).toBeTrue()
   })
 
-  it('Shoulrd return "true" if both arguments are "true", othwerwise "false"', () => {
+  it('Should return "true" if both arguments are "true", othwerwise "false"', () => {
     expect(and(true, true)).toBeTrue()
     expect(and(true, false)).toBeFalse()
     expect(and(false, true)).toBeFalse()
